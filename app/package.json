@@ -2,15 +2,19 @@
   "name": "sensors-manager",
   "version": "1.0.0",
   "description": "Complete app to manage groups of sensors remotely",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/server.js"
+    "start": "node index.js"
   },
   "author": "",
   "contributors": [
-    { "name": "Emanuel Gómez Arn" },
-    { "name": "Leandro Bertoluzzi" }
+    {
+      "name": "Emanuel Gómez Arn"
+    },
+    {
+      "name": "Leandro Bertoluzzi"
+    }
   ],
   "license": "ISC",
   "dependencies": {
