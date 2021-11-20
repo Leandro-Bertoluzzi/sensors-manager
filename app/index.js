@@ -17,8 +17,6 @@ app.get('/', (req, res) => {
 });
 
 // Get DB data
-var responseStr = "MySQL Data:";
-
 app.get('/db',function(req,res){
    
    var dbHost = config.DB_HOST;
@@ -35,33 +33,34 @@ app.get('/db',function(req,res){
      database: dbName
    };
 
-   console.log('MySQL Connection config:');
-   console.log(connectionOptions);
-
    var connection = db.createConnection(connectionOptions);
    var queryStr = 'SELECT * FROM TESTING_ITEM_TABLE';
    
    connection.connect();
- 
+   
    connection.query(queryStr, function (error, results, fields) {
      if (error) throw error;
      
-     responseStr = '';
-
+     /*
+     var responseStr = '';
      results.forEach(function(data){
         responseStr += data.ITEM_NAME + ' : ';
-        console.log(data);
      });
-
-     if(responseStr.length == 0)
-        responseStr = 'No records found';
-
-     console.log(responseStr);
-
-     res.status(200).send(responseStr);
+     */
+     
+     var jsonArray = JSON.parse(JSON.stringify(results));
+     res.json(jsonArray);
    });
     
    connection.end();
+});
+
+// JSON test
+app.use(express.json());  // The middleware json allows to decode the json request body
+    
+app.post('/json', function (req, res) {
+  console.log(req.body.name);
+  res.json({ yourName: req.body.name });
 });
 
 app.listen(PORT, HOST);
