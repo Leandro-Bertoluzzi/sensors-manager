@@ -3,12 +3,48 @@ version: "3.8"
 services:
   nodejs:
     image: nodejs-app
-    container_name: nodejs-server
     build:
       context: .
       dockerfile: ./app/Dockerfile
-    ports:
-      - "3000:3000"
+    networks:
+      - frontend
+      - backend
     environment:
       - HOST=0.0.0.0
       - PORT=3000
+      - DB_HOST=sensors-app-mysql
+      - DB_USER=leandro
+      - DB_PASS=testing
+      - DB_NAME=db_testing
+    volumes:
+      - ./www/:/var/www/html/
+    ports:
+      - "3000:3000"
+    container_name: sensors-app-nodejs
+  mysql:
+    image: mysql:5.7
+    networks:
+      - backend
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_USER=leandro
+      - MYSQL_PASSWORD=testing 
+      - MYSQL_DATABASE=db_testing
+    container_name: sensors-app-mysql
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:4.7
+    depends_on:
+      - mysql
+    networks:
+      - backend
+    ports:
+      - "30002:80"
+    environment:
+      - PMA_HOST=sensors-app-mysql
+      - PMA_PORT= 3306
+    volumes:
+      - /sessions
+    container_name: sensors-app-phpmyadmin
+networks:
+  frontend:
+  backend:
