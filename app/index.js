@@ -1,8 +1,8 @@
-'use strict';
+"use strict";
 
-const express = require('express');
-var db = require('mysql');
-const config = require('./config');
+const express = require("express");
+var db = require("mysql2");
+const config = require("./config");
 
 // Constants
 const PORT = config.PORT;
@@ -12,29 +12,31 @@ const HOST = config.HOST;
 
 // Home
 const app = express();
-app.get('/', (req, res) => {
-  res.send('Hello World');
+app.get("/", (req, res) => {
+  res.send("Hello World");
 });
 
 // Get DB data
-app.get('/db',function(req,res){
+app.get("/testdb", function (req, res) {
   var connectionOptions = {
     host: config.DB_HOST,
     port: config.DB_PORT,
     user: config.DB_USER,
     password: config.DB_PASS,
-    database: config.DB_NAME
+    database: config.DB_NAME,
   };
 
   var connection = db.createConnection(connectionOptions);
-  var queryStr = 'SELECT * FROM TESTING_ITEM_TABLE';
+  var queryStr = "SELECT * FROM TESTING_ITEM_TABLE";
 
   connection.connect();
 
   connection.query(queryStr, function (error, results, fields) {
     var jsonArray;
-    if (error){
-      var jsonArray = JSON.parse(JSON.stringify({ error: "DB table not found" }));
+    if (error) {
+      var jsonArray = JSON.parse(
+        JSON.stringify({ error: "DB table not found" })
+      );
       res.status(500).json(jsonArray);
     } else {
       jsonArray = JSON.parse(JSON.stringify(results));
@@ -46,9 +48,9 @@ app.get('/db',function(req,res){
 });
 
 // JSON test
-app.use(express.json());  // The middleware json allows to decode the json request body
-    
-app.post('/json', function (req, res) {
+app.use(express.json()); // The middleware json allows to decode the json request body
+
+app.post("/json", function (req, res) {
   console.log(req.body.name);
   res.status(200).json({ yourName: req.body.name });
 });

@@ -1,4 +1,4 @@
-<h1 align="center">Nodejs Docker Mysql</h1>
+<h1 align="center">Sensors manager</h1>
 
 <p align="center">
   <img alt="Github top language" src="https://img.shields.io/github/languages/top/Leandro-Bertoluzzi/sensors-manager?color=56BEB8">
