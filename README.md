@@ -1,19 +1,19 @@
 <h1 align="center">Nodejs Docker Mysql</h1>
 
 <p align="center">
-  <img alt="Github top language" src="https://img.shields.io/github/languages/top/Leandro-Bertoluzzi/nodejs-docker-mysql?color=56BEB8">
+  <img alt="Github top language" src="https://img.shields.io/github/languages/top/Leandro-Bertoluzzi/sensors-manager?color=56BEB8">
 
-  <img alt="Github language count" src="https://img.shields.io/github/languages/count/Leandro-Bertoluzzi/nodejs-docker-mysql?color=56BEB8">
+  <img alt="Github language count" src="https://img.shields.io/github/languages/count/Leandro-Bertoluzzi/sensors-manager?color=56BEB8">
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/Leandro-Bertoluzzi/nodejs-docker-mysql?color=56BEB8">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/Leandro-Bertoluzzi/sensors-manager?color=56BEB8">
 
-  <img alt="License" src="https://img.shields.io/github/license/Leandro-Bertoluzzi/nodejs-docker-mysql?color=56BEB8">
+  <img alt="License" src="https://img.shields.io/github/license/Leandro-Bertoluzzi/sensors-manager?color=56BEB8">
 </p>
 
 <!-- Status -->
 
 <h4 align="center"> 
-	🚧  Nodejs Docker Mysql 🚀 Under construction...  🚧
+	🚧 Sensor manager 🚀 Under construction...  🚧
 </h4> 
 
 <hr>
@@ -56,10 +56,10 @@ Before starting :checkered_flag:, you need to have [Node](https://nodejs.org/en/
 
 ```bash
 # Clone this project
-$ git clone https://github.com/Leandro-Bertoluzzi/nodejs-docker-mysql
+$ git clone https://github.com/Leandro-Bertoluzzi/sensors-manager
 
 # Access
-$ cd nodejs-docker-mysql
+$ cd sensors-manager
 
 # Install dependencies
 $ npm install
