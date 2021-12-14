@@ -18,19 +18,12 @@ app.get('/', (req, res) => {
 
 // Get DB data
 app.get('/db',function(req,res){
-
-  var dbHost = config.DB_HOST;
-  var dbPort = config.DB_PORT;
-  var dbUser = config.DB_USER;
-  var dbPass = config.DB_PASS;
-  var dbName   = config.DB_NAME;
-
   var connectionOptions = {
-    host: dbHost,
-    port: dbPort,
-    user: dbUser,
-    password: dbPass,
-    database: dbName
+    host: config.DB_HOST,
+    port: config.DB_PORT,
+    user: config.DB_USER,
+    password: config.DB_PASS,
+    database: config.DB_NAME
   };
 
   var connection = db.createConnection(connectionOptions);

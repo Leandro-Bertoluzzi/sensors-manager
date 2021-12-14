@@ -28,7 +28,7 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_USER=leandro
-      - MYSQL_PASSWORD=testing 
+      - MYSQL_PASSWORD=testing
       - MYSQL_DATABASE=db_testing
     container_name: sensors-app-mysql
   phpmyadmin:
