@@ -1,0 +1,66 @@
+{
+	"id": "427ce6ec-5bf1-8fff-a246-c664fab1cc2f",
+	"name": "sensors-manager",
+	"description": "",
+	"order": [
+		"e30ff625-0a00-6436-e44a-c57ada0184e9",
+		"4467dbd2-67ba-a2c3-31a5-828de34bd77a"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1637369558962,
+	"owner": "10553870",
+	"public": false,
+	"requests": [
+		{
+			"id": "4467dbd2-67ba-a2c3-31a5-828de34bd77a",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{baseUrl}}/json",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1639445747162,
+			"name": "json-test",
+			"description": "",
+			"collectionId": "427ce6ec-5bf1-8fff-a246-c664fab1cc2f",
+			"responses": [],
+			"rawModeData": "{\"name\":\"Leandro\"}"
+		},
+		{
+			"id": "e30ff625-0a00-6436-e44a-c57ada0184e9",
+			"headers": "",
+			"headerData": [],
+			"url": "{{baseUrl}}/testdb",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1639445761445,
+			"name": "db-test",
+			"description": "",
+			"collectionId": "427ce6ec-5bf1-8fff-a246-c664fab1cc2f",
+			"responses": []
+		}
+	]
+}
